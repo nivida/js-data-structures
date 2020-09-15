@@ -18,22 +18,44 @@ class LinkedList {
         this.head = null;
     }
 
+    /**
+     * Checks if the current LinkedList is empty
+     *
+     * @returns {boolean}
+     */
     isEmpty() {
         return !(this.head === null);
     }
 
+    /**
+     * Removes the Head
+     *
+     * @returns {Node}
+     */
     removeHead() {
         this.head = this.head.next;
 
         return this.head;
     }
 
+    /**
+     * Prepends a node to the linked list
+     *
+     * @param {Node} node
+     */
     prepend(node) {
         const head = this.head;
         this.head = node;
         node.next = head;
     }
 
+    /**
+     * Add's a Node to the linked list
+     *
+     * @param {Node} node
+     *
+     * @returns {boolean}
+     */
     add(node) {
         if (this.head === null) {
             this.head = node;
@@ -51,6 +73,13 @@ class LinkedList {
         return true;
     }
 
+    /**
+     * Returns a Node by the given index
+     *
+     * @param {number} index
+     *
+     * @returns {Node | undefined}
+     */
     get(index) {
         if (index <= -1 || this.head === null) {
             return void(0);
@@ -73,6 +102,13 @@ class LinkedList {
         return void(0);
     }
 
+    /**
+     * Returns all Nodes with a specific value
+     *
+     * @param {any} value
+     *
+     * @returns {Array<Node>}
+     */
     getNodesByValue(value) {
         const values = [];
 
@@ -92,6 +128,13 @@ class LinkedList {
         return values;
     }
 
+    /**
+     * Removes a Node by the given index and returns the value of the node
+     *
+     * @param {number} index
+     *
+     * @returns {any}
+     */
     remove(index) {
         if (index <= -1 || this.head === null) {
             throw new RangeError(`Given index (${index}) does not exist.`);
@@ -124,6 +167,13 @@ class LinkedList {
         throw new RangeError('Node not found!');
     }
 
+    /**
+     * Removes all Nodes by the given value
+     *
+     * @param {any} value
+     *
+     * @returns {Array<any>}
+     */
     removeNodesByValue(value) {
         const values = [];
 

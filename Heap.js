@@ -1,6 +1,9 @@
 
 class IntHeap {
     /**
+     * TODO: Should be implemented with inheritance (open/close principal)
+     * TODO: Cause of the async nature should this Heap get locked as soon as an operation is on-going
+     *
      * Integer Heap
      * 
      * @param {string} type
@@ -9,7 +12,7 @@ class IntHeap {
      */
     constructor(type) {
         this.items = [];
-        this.type = type || 'min'; // Should be implemented with inheritance (open/close principal)
+        this.type = type || 'min';
     }
 
     /**
